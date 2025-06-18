@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 int main() {
-    //No bloco abaixo, a declaração das variáveis usadas.
+    //A seguir, a declaração das variáveis usadas.
     char estado, codigo[4], cidade[30];
     int populacao, pontos;
-    float area, pib;
+    float area, pib, denspop, pibpc;
 
-    //No bloco abaixo, a requisição ao usuário para que insira as informações necessárias para definir a primeira carta e, após, exibi-la.
+    //A seguir, a requisição ao usuário para que insira as informações necessárias para definir a primeira carta.
     printf("A seguir, insira os dados da primeira carta:\nDigite uma letra de A a H, representando um dos oito estados:\n");
     scanf(" %c", &estado);
     printf("Digite o código da carta, contendo a letra do estado seguida de um número de 01 a 04:\n");
@@ -22,9 +22,15 @@ int main() {
     printf("Digite o número de pontos turísticos da cidade:\n");
     scanf("%d", &pontos);
     getchar();
-    printf("\nCarta 1:\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %d\nÁrea: %.2f\nPIB: %.2f\nNúmero de Pontos Turísticos: %d\n", estado, codigo, cidade, populacao, area, pib, pontos);
 
-    //No bloco abaixo, a requisição ao usuário para que insira as informações necessárias para definir a segunda carta e, após, exibi-la.
+    //A seguir, o cálculo da densidade populacional e do PIB per Capita para a Carta 1.
+    denspop = populacao / area;
+    pibpc = pib / populacao;
+
+    //A seguir, a exibição da primeira Carta.
+    printf("\nCarta 1:\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %d\nÁrea: %.2f\nPIB: %.2f\nNúmero de Pontos Turísticos: %d\nDensidade Populacional: %.2f\nPIB per Capita: %.2f\n", estado, codigo, cidade, populacao, area, pib, pontos, denspop, pibpc);
+
+    //A seguir, a requisição ao usuário para que insira as informações necessárias para definir a segunda carta.
     printf("\nA seguir, insira os dados da segunda carta:\nDigite uma letra de A a H, representando um dos oito estados:\n");
     scanf(" %c", &estado);
     printf("Digite o código da carta, contendo a letra do estado seguida de um número de 01 a 04:\n");
@@ -39,7 +45,13 @@ int main() {
     scanf("%f", &pib);
     printf("Digite o número de pontos turísticos da cidade:\n");
     scanf("%d", &pontos);
-    printf("\nCarta 2:\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %d\nÁrea: %.2f\nPIB: %.2f\nNúmero de Pontos Turísticos: %d", estado, codigo, cidade, populacao, area, pib, pontos);
+
+    //A seguir, o cálculo da densidade populacional e do PIB per Capita para a Carta 2.
+    denspop = populacao / area;
+    pibpc = pib / populacao;
+
+    //A seguir, a exibição da segunda Carta.
+    printf("\nCarta 2:\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %d\nÁrea: %.2f\nPIB: %.2f\nNúmero de Pontos Turísticos: %d\nDensidade Populacional: %.2f\nPIB per Capita: %.2f\n", estado, codigo, cidade, populacao, area, pib, pontos, denspop, pibpc);
 
     return 0;
 }
